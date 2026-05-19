@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem Statements</title>
+  <style>
+    :root {
+      --bg: #f6f0e8;
+      --panel: #fffaf3;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --accent: #b45309;
+      --border: #e5d6c3;
+      --code-bg: #2b2d31;
+      --code-ink: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #f3e7d8 0%, var(--bg) 30%, #efe7dc 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .page {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+    header {
+      background: rgba(255, 250, 243, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(84, 52, 24, 0.08);
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .toc, .problem {
+      background: rgba(255, 250, 243, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 14px 30px rgba(84, 52, 24, 0.07);
+    }
+    .toc {
+      padding: 22px 24px;
+      margin-bottom: 24px;
+    }
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px 18px;
+    }
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .toc a:hover { text-decoration: underline; }
+    .problems {
+      display: grid;
+      gap: 18px;
+    }
+    .problem {
+      overflow: hidden;
+    }
+    .problem-header {
+      padding: 18px 22px 10px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(180, 83, 9, 0.08), rgba(255, 250, 243, 0));
+    }
+    .problem-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .problem-header p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    pre {
+      margin: 0;
+      padding: 18px 22px 22px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: var(--code-ink);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+    code { font-family: inherit; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 20px, 1100px); padding: 20px 0 40px; }
+      header, .toc { padding: 18px; }
+      .problem-header { padding: 16px 16px 10px; }
+      pre { padding: 14px 16px 18px; font-size: 0.88rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Problem Statements</h1>
+      <p class="subtitle">A compiled HTML view of all 69 Python problem files from the <code>Problem_Statements</code> folder.</p>
+    </header>
+    <section class="toc">
+      <h2>Contents</h2>
+      <div class="toc-grid">
+        <a href="#01_perimeter">01_perimeter.py</a>
+        <a href="#02_unique">02_unique.py</a>
+        <a href="#03_common">03_common.py</a>
+        <a href="#04_remove">04_remove.py</a>
+        <a href="#05_count">05_count.py</a>
+        <a href="#06_position">06_position.py</a>
+        <a href="#07_merge">07_merge.py</a>
+        <a href="#08_repeatition">08_repeatition.py</a>
+        <a href="#09_occurence">09_occurence.py</a>
+        <a href="#10_recursive">10_recursive.py</a>
+        <a href="#11_pallendrome">11_pallendrome.py</a>
+        <a href="#12_flatened">12_flatened.py</a>
+        <a href="#13_rotate">13_rotate.py</a>
+        <a href="#14_sort">14_sort.py</a>
+        <a href="#15_reverse">15_reverse.py</a>
+        <a href="#16_duplicate">16_duplicate.py</a>
+        <a href="#17_count">17_count.py</a>
+        <a href="#18_largest">18_largest.py</a>
+        <a href="#19_analgram">19_analgram.py</a>
+        <a href="#20_split">20_split.py</a>
+        <a href="#21_string">21_string.py</a>
+        <a href="#22_even">22_even.py</a>
+        <a href="#23_replace">23_replace.py</a>
+        <a href="#24_upper_lower">24_upper_lower.py</a>
+        <a href="#25_check">25_check.py</a>
+        <a href="#26_missing">26_missing.py</a>
+        <a href="#27_factorial">27_factorial.py</a>
+        <a href="#28_merge">28_merge.py</a>
+        <a href="#29_longest">29_longest.py</a>
+        <a href="#30_fibonacci">30_fibonacci.py</a>
+        <a href="#31_reverse">31_reverse.py</a>
+        <a href="#32_min_max">32_min_max.py</a>
+        <a href="#33_count">33_count.py</a>
+        <a href="#34_punctuations">34_punctuations.py</a>
+        <a href="#35_convert">35_convert.py</a>
+        <a href="#36_find">36_find.py</a>
+        <a href="#37_sum">37_sum.py</a>
+        <a href="#38_armstrong">38_armstrong.py</a>
+        <a href="#39_table">39_table.py</a>
+        <a href="#40_factor">40_factor.py</a>
+        <a href="#41_empty">41_empty.py</a>
+        <a href="#42_prime">42_prime.py</a>
+        <a href="#43_counting">43_counting.py</a>
+        <a href="#44_swap">44_swap.py</a>
+        <a href="#45_duplicate">45_duplicate.py</a>
+        <a href="#46_captalize">46_captalize.py</a>
+        <a href="#47_length">47_length.py</a>
+        <a href="#48_subset">48_subset.py</a>
+        <a href="#49_unique">49_unique.py</a>
+        <a href="#50_intersection">50_intersection.py</a>
+        <a href="#51_space">51_space.py</a>
+        <a href="#52_count">52_count.py</a>
+        <a href="#53_two_list">53_two_list.py</a>
+        <a href="#54_decimal_binary">54_decimal_binary.py</a>
+        <a href="#55_gcd">55_gcd.py</a>
+        <a href="#56_lcm">56_lcm.py</a>
+        <a href="#57_remove">57_remove.py</a>
+        <a href="#58_stack">58_stack.py</a>
+        <a href="#59_sum">59_sum.py</a>
+        <a href="#60_power">60_power.py</a>
+        <a href="#61_average">61_average.py</a>
+        <a href="#62_concatenate">62_concatenate.py</a>
+        <a href="#63_smallest">63_smallest.py</a>
+        <a href="#64_occurence">64_occurence.py</a>
+        <a href="#65_lead_tail">65_lead_tail.py</a>
+        <a href="#66_common">66_common.py</a>
+        <a href="#67_square">67_square.py</a>
+        <a href="#68_digits">68_digits.py</a>
+        <a href="#69_recursive">69_recursive.py</a>
+      </div>
+    </section>
+    <section class="problems">
+      <article class="problem" id="01_perimeter">
+        <div class="problem-header">
+          <h3>01. 01_perimeter.py</h3>
+          <p>Source file: Problem_Statements/01_perimeter.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+1. Perimeter Calculation Program
+Problem Statement:
+Design a program that calculates the perimeter of different geometric shapes: triangle,
+rectangle, and circle. The user should select the shape and provide the required dimensions.
+Input:
+ Choice of shape
+ Triangle: three sides (a, b, c)
+ Rectangle: length and breadth
+ Circle: radius
+Output:
+ Perimeter of the selected shape
+Example:
+Input: Rectangle → length = 5, breadth = 3
+Output: Perimeter = 16
+Constraints:
+ All inputs must be positive numbers
+&quot;&quot;&quot;
+def triangle(a,b,c):
+    result = a + b + c
+    return result
+def rectangle(l,b):
+    result = 2 * (l + b)
+    return result
+def circle(r):
+    result = 2 * 3.14 * r
+    return result
+
+user = int(input(&quot;Enter Your Choice (1 = Triangle /2 = Rectangle /3 = Circle) : &quot;))
+match user :
+    case 1 :
+        a = int(input(&quot;Enter Side A : &quot;))
+        b = int(input(&quot;Enter Side B : &quot;))
+        c = int(input(&quot;Enter Side C : &quot;))
+        result = triangle(a,b,c)
+        print(&quot;Perimeter of triangle : &quot;,result)
+    case 2 :
+        length = int(input(&quot;Enter length : &quot;))
+        breadth = int(input(&quot;Enter breadth : &quot;))
+        result = rectangle(length,breadth)
+        print(&quot;Perimeter of triangle : &quot;,result)
+    case 3 :
+        radius = int(input(&quot;Enter radius of circle : &quot;))
+        result = circle(radius)
+        print(&quot;Perimeter of Circle : &quot;,result)
+    case _:
+        print(&quot;User Enteres wrong choice!!&quot;)
+        </code></pre>
+      </article>
+      <article class="problem" id="02_unique">
+        <div class="problem-header">
+          <h3>02. 02_unique.py</h3>
+          <p>Source file: Problem_Statements/02_unique.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+2. Difference Between Two Lists
+Problem Statement:
+Write a program to find elements that are present in the first list but not in the second list.
+Input:
+ Two lists of integers
+Output:
+ A list containing elements unique to the first list
+Example:
+Input: L1 = [1, 2, 3, 4], L2 = [3, 4, 5]
+Output: [1, 2]
+&quot;&quot;&quot;
+l1 = [1, 2, 3, 4]
+l2 = [3, 4, 5]
+final = []
+for i in l1:
+    if i not in l2:
+        final.append(i)
+print(final)</code></pre>
+      </article>
+      <article class="problem" id="03_common">
+        <div class="problem-header">
+          <h3>03. 03_common.py</h3>
+          <p>Source file: Problem_Statements/03_common.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+3. Common Elements in Three Lists
+Problem Statement:
+Develop a program to identify elements that are common across three given lists.
+Input:
+ Three lists
+Output:
+ List of common elements
+Example:
+Input: [1,2,3], [2,3,4], [2,5,3]
+Output: [2, 3]
+&quot;&quot;&quot;
+l1 = [1,2,3]
+l2 = [2,3,4]
+l3 = [2,5,3]
+common = []
+for i in l1 :
+    if i in l2 and l3:
+        common.append(i)
+print(common)</code></pre>
+      </article>
+      <article class="problem" id="04_remove">
+        <div class="problem-header">
+          <h3>04. 04_remove.py</h3>
+          <p>Source file: Problem_Statements/04_remove.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+4. Remove All Occurrences of a Word
+Problem Statement:
+Write a program to remove all occurrences of a specified word from a list of words.
+Input:
+ List of words
+ Word to remove
+Output:
+ Updated list
+Example:
+Input: [&quot;apple&quot;, &quot;banana&quot;, &quot;apple&quot;, &quot;cherry&quot;], remove &quot;apple&quot;
+Output: [&quot;banana&quot;, &quot;cherry&quot;]
+&quot;&quot;&quot;
+word = input(&quot;Enter words by giving space : &quot;).split()
+remove = input(&quot;Enter a word to remove from list : &quot;)
+update = [ i for i in word if i!=remove]
+print(update)
+# another method
+final = []
+for i in word :
+    if i != remove:
+        final.append(i)
+print(final)</code></pre>
+      </article>
+      <article class="problem" id="05_count">
+        <div class="problem-header">
+          <h3>05. 05_count.py</h3>
+          <p>Source file: Problem_Statements/05_count.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+5. Count Vowels and Consonants
+Problem Statement:
+Create a program to count the number of vowels and consonants in a given string.
+Input:
+ A string
+Output:
+ Number of vowels and consonants
+Example:
+Input: &quot;hello world&quot;
+Output: Vowels = 3, Consonants = 7
+Note: Ignore spaces and special characters
+&quot;&quot;&quot;
+user = input(&quot;Enter a string : &quot;)
+vowels = 0
+consonant = 0
+for i in user :
+    if i in &quot;aeiou&quot;:
+        vowels += 1
+    elif i not in &quot;aeiou&quot;:
+        consonant += 1
+    elif i in &quot; !@#$%^&amp;*()&quot;:
+        continue
+print(f&quot;Vowels : {vowels} and Consonant : {consonant}&quot;)</code></pre>
+      </article>
+      <article class="problem" id="06_position">
+        <div class="problem-header">
+          <h3>06. 06_position.py</h3>
+          <p>Source file: Problem_Statements/06_position.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+6. Find Substring Positions
+Problem Statement:
+Write a program to find all occurrences and positions of a substring within a given string.
+Input:
+ Main string
+ Substring
+Output:
+ List of starting indices where substring occurs
+Example:
+Input: String = &quot;banana&quot;, Substring = &quot;ana&quot;
+Output: [1, 3]
+&quot;&quot;&quot;
+String = &quot;banana&quot;
+Substring = &quot;ana&quot;
+final = [String.find(Substring),len(Substring)]
+print(final)
+      </code></pre>
+      </article>
+      <article class="problem" id="07_merge">
+        <div class="problem-header">
+          <h3>07. 07_merge.py</h3>
+          <p>Source file: Problem_Statements/07_merge.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+7. Merge Lists into Dictionary
+Problem Statement:
+Develop a program to create a dictionary by combining two lists: one containing keys and the
+other containing corresponding values.
+Input:
+ List of keys
+ List of values
+Output:
+ Dictionary mapping keys to values
+Example:
+Input: Keys = [&quot;a&quot;, &quot;b&quot;], Values = [1, 2]
+Output: {&quot;a&quot;:1, &quot;b&quot;:2}
+Constraint:
+ Both lists must be of equal length
+&quot;&quot;&quot;
+
+keys = [&quot;a&quot;, &quot;b&quot;]
+values = [1, 2]
+dict = {}
+for i in range(len(keys)):
+    dict[keys[i]] = values[i]
+print(dict)
+</code></pre>
+      </article>
+      <article class="problem" id="08_repeatition">
+        <div class="problem-header">
+          <h3>08. 08_repeatition.py</h3>
+          <p>Source file: Problem_Statements/08_repeatition.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+8. Most Frequent Word
+Problem Statement:
+Write a program to identify the most frequently occurring word in a given string.
+Input:
+ A string
+Output:
+ Word with highest frequency
+Example:
+Input: &quot;cat dog cat bird dog cat&quot;
+Output: cat
+&quot;&quot;&quot;
+text = &quot;cat dog cat bird dog cat&quot;
+words = text.split()
+
+max_count = 0
+most_word = &quot;&quot;
+
+for i in range(len(words)):
+    count = 0
+    for j in range(len(words)):
+        if words[i] == words[j]:
+            count += 1
+    
+    if count &gt; max_count:
+        max_count = count
+        most_word = words[i]
+
+print(most_word)</code></pre>
+      </article>
+      <article class="problem" id="09_occurence">
+        <div class="problem-header">
+          <h3>09. 09_occurence.py</h3>
+          <p>Source file: Problem_Statements/09_occurence.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+9. Dictionary Based on Word Length
+Problem Statement:
+Create a dictionary where the key represents the length of words and the value is a list of
+words having that length.
+Input:
+ List of words
+Output:
+ Dictionary grouping words by length
+Example:
+Input: [&quot;hi&quot;, &quot;hello&quot;, &quot;cat&quot;]
+Output: {2: [&quot;hi&quot;], 3: [&quot;cat&quot;], 5: [&quot;hello&quot;]}
+&quot;&quot;&quot;
+input = [&quot;hi&quot;, &quot;hello&quot;, &quot;cat&quot;]
+dict = {}
+count = 0
+for i in input:
+    count = len(i)
+    dict[count] = i
+print(dict)</code></pre>
+      </article>
+      <article class="problem" id="10_recursive">
+        <div class="problem-header">
+          <h3>10. 10_recursive.py</h3>
+          <p>Source file: Problem_Statements/10_recursive.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+10. Recursive Sum of List
+Problem Statement:
+Write a recursive function to calculate the sum of all elements in a list.
+Input:
+ List of numbers
+Output:
+ Sum of elements
+Example:
+Input: [1, 2, 3, 4]
+Output: 10
+&quot;&quot;&quot;
+
+list1 = [1,2,3,4]
+def sum1(list):
+    n=len(list)-1
+    if(n&lt;0):
+        return 0
+    else:
+        return list[n]+sum1(list[0:n])
+result = sum1(list1)
+print(&quot;sum of elements : &quot;,result)</code></pre>
+      </article>
+      <article class="problem" id="11_pallendrome">
+        <div class="problem-header">
+          <h3>11. 11_pallendrome.py</h3>
+          <p>Source file: Problem_Statements/11_pallendrome.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+11. Palindrome Check
+Problem Statement:
+Develop a program to check whether a given string is a palindrome.
+Input:
+ A string
+Output:
+ True / False
+Example:
+Input: &quot;madam&quot;
+Output: True
+&quot;&quot;&quot;
+str = input(&quot;Enter String : &quot;)
+if str == str[::-1]:
+    print(True)
+else:
+    print(False)
+
+# 2nd method 
+string = &quot;madam&quot;
+start = 0
+end = len(string)-1
+is_pallendrome = True
+while(start &lt; end):
+    if(string[start] != string[end]):
+        is_pallendrome = False
+        break
+    start += 1
+    end -= 1
+print(is_pallendrome)</code></pre>
+      </article>
+      <article class="problem" id="12_flatened">
+        <div class="problem-header">
+          <h3>12. 12_flatened.py</h3>
+          <p>Source file: Problem_Statements/12_flatened.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+12. Flatten Nested List
+Problem Statement:
+Write a program to convert a nested list into a single flattened list.
+Input:
+ Nested list
+Output:
+ Flattened list
+Example:
+Input: [1, [2, [3, 4]], 5]
+Output: [1, 2, 3, 4, 5]
+&quot;&quot;&quot;
+list1 = [1, [2, [3, 4]], 5]
+list2 = []
+
+    </code></pre>
+      </article>
+      <article class="problem" id="13_rotate">
+        <div class="problem-header">
+          <h3>13. 13_rotate.py</h3>
+          <p>Source file: Problem_Statements/13_rotate.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+13. Rotate List
+Problem Statement:
+Create a program to rotate a list by k positions to the right.
+Input:
+ List
+ Integer k
+Output:
+ Rotated list
+Example:
+Input: [1,2,3,4,5], k = 2
+Output: [4,5,1,2,3]
+&quot;&quot;&quot;
+list1 = [1,2,3,4,5]
+k = int(input(&quot;Enter value of k to rotate a list : &quot;))
+# start = list1[k+1:]
+# end = list1[:k+1]
+# final = start + end
+# print(final)
+def rotate(list,k):
+    start = list[k+1:]
+    end = list[:k+1]
+    return start + end
+result = rotate(list1,k)
+print(&quot;After rotate : &quot;,result)</code></pre>
+      </article>
+      <article class="problem" id="14_sort">
+        <div class="problem-header">
+          <h3>14. 14_sort.py</h3>
+          <p>Source file: Problem_Statements/14_sort.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+14. Sort List of Dictionaries
+Problem Statement:
+Write a program to sort a list of dictionaries based on a given key.
+Input:
+ List of dictionaries
+ Key
+Output:
+ Sorted list
+Example:
+Input: [{&quot;age&quot;:25}, {&quot;age&quot;:20}]
+Output: [{&quot;age&quot;:20}, {&quot;age&quot;:25}]
+&quot;&quot;&quot;
+data = [{&quot;age&quot;: 25}, {&quot;age&quot;: 20}]
+
+for i in range(len(data)):
+    for j in range(i + 1, len(data)):
+        if data[i][&quot;age&quot;] &gt; data[j][&quot;age&quot;]:
+            data[i], data[j] = data[j], data[i]     #swap
+
+print(data)</code></pre>
+      </article>
+      <article class="problem" id="15_reverse">
+        <div class="problem-header">
+          <h3>15. 15_reverse.py</h3>
+          <p>Source file: Problem_Statements/15_reverse.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+15. Recursive Reverse String
+Problem Statement:
+Develop a recursive function to reverse a given string.
+Input:
+ String
+Output:
+ Reversed string
+Example:
+Input: &quot;hello&quot;
+Output: &quot;olleh&quot;
+&quot;&quot;&quot;
+string = &quot;hello&quot;
+
+def reverse(str):
+    n = len(str)-1
+    if(n&lt;0):
+        return &quot;&quot;
+    else:
+        return str[n] + reverse(str[0:n])
+result = reverse(string)
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="16_duplicate">
+        <div class="problem-header">
+          <h3>16. 16_duplicate.py</h3>
+          <p>Source file: Problem_Statements/16_duplicate.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+16. Remove Duplicate Elements from a List
+Problem Statement:
+Write a program to remove duplicate elements from a list while maintaining the original
+order.
+Input:
+ A list of elements
+Output:
+ List with duplicates removed
+Example:
+Input: [1, 2, 2, 3, 4, 3]
+Output: [1, 2, 3, 4]
+&quot;&quot;&quot;
+list1 = [1,2,2,3,4,3]
+result = []
+for i in list1:
+    if i not in result:
+        result.append(i)
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="17_count">
+        <div class="problem-header">
+          <h3>17. 17_count.py</h3>
+          <p>Source file: Problem_Statements/17_count.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+17. Count Digits, Letters, and Special Characters
+Problem Statement:
+Develop a program to count the number of digits, alphabets, and special characters in a given
+string.
+Input:
+ A string
+Output:
+ Count of digits, letters, and special characters
+Example:
+Input: &quot;Hello123!&quot;
+Output: Letters = 5, Digits = 3, Special Characters = 1
+&quot;&quot;&quot;
+# 1. approach
+string = &quot;hello123!&quot;
+letter = 0
+digit = 0
+char = 0
+for i in string:
+    if (65 &lt;= ord(i) &lt;= 90) or (97 &lt;= ord(i) &lt;= 122):
+        letter += 1
+    elif 48 &lt;= ord(i) &lt;= 57:
+        digit += 1
+    else:
+        char+=1
+print(letter,digit,char)
+
+# 2. approach
+string = &quot;hello123!&quot;
+
+letter = 0
+digit = 0
+char = 0
+
+for i in string:
+    if i.isalpha():
+        letter += 1
+    elif i.isdigit():
+        digit += 1
+    else:
+        char += 1
+
+print(&quot;Letters =&quot;, letter)
+print(&quot;Digits =&quot;, digit)
+print(&quot;Special Characters =&quot;, char)</code></pre>
+      </article>
+      <article class="problem" id="18_largest">
+        <div class="problem-header">
+          <h3>18. 18_largest.py</h3>
+          <p>Source file: Problem_Statements/18_largest.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+18. Find Second Largest Element in a List
+Problem Statement:
+Write a program to find the second largest element in a list without sorting the list.
+Input:
+ A list of integers
+Output:
+ Second largest number
+Example:
+Input: [10, 20, 4, 45, 99]
+Output: 45
+Constraint:
+ List must contain at least two unique elements
+&quot;&quot;&quot;
+# with sorting method 
+list1 = [10, 20, 4, 45, 99]
+max = []
+for i in range(len(list1)):
+    for j in range(i+1, len(list1)):
+        if list1[j] &gt; list1[i]:
+            list1[i], list1[j] = list1[j], list1[i]
+print(list1[1])
+
+# without sorting method
+list1 = [10, 20, 4, 45, 99]
+largest = float(&#x27;-inf&#x27;)
+second = float(&#x27;-inf&#x27;)
+
+for num in list1:
+    if num &gt; largest:
+        second = largest
+        largest = num
+    elif num &gt; second and num != largest:
+        second = num
+print(&quot;Second largest:&quot;, second)</code></pre>
+      </article>
+      <article class="problem" id="19_analgram">
+        <div class="problem-header">
+          <h3>19. 19_analgram.py</h3>
+          <p>Source file: Problem_Statements/19_analgram.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+19. Check Anagram Strings
+Problem Statement:
+Create a program to check whether two strings are anagrams of each other.
+Input:
+ Two strings
+Output:
+ True / False
+Example:
+Input: &quot;listen&quot;, &quot;silent&quot;
+Output: True
+&quot;&quot;&quot;
+n1 = &quot;listen&quot;
+n2 = &quot;silent&quot;
+
+if(sorted(n1) == sorted(n2)):
+    print(True)
+else:
+    print(False)
+</code></pre>
+      </article>
+      <article class="problem" id="20_split">
+        <div class="problem-header">
+          <h3>20. 20_split.py</h3>
+          <p>Source file: Problem_Statements/20_split.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+20. Split String into Words and Count Length
+Problem Statement:
+Write a program to split a sentence into words and display each word along with its length.
+Input:
+ A string sentence
+Output:
+ Words with their respective lengths
+Example:
+Input: &quot;Python is fun&quot;
+Output: Python–6, is–2, fun–3
+&quot;&quot;&quot;
+string = &quot;Python is fun&quot;
+l1 = string.split()
+for i in l1:
+    length = len(i)
+    print(i,&quot;-&quot;,length)</code></pre>
+      </article>
+      <article class="problem" id="21_string">
+        <div class="problem-header">
+          <h3>21. 21_string.py</h3>
+          <p>Source file: Problem_Statements/21_string.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+21. Create Dictionary from String Characters
+Problem Statement:
+Develop a program to create a dictionary where keys are characters and values are their
+frequencies in a string.
+Input:
+ A string
+Output:
+ Dictionary of character frequencies
+Example:
+Input: &quot;apple&quot;
+Output: {&#x27;a&#x27;:1, &#x27;p&#x27;:2, &#x27;l&#x27;:1, &#x27;e&#x27;:1}
+&quot;&quot;&quot;
+</code></pre>
+      </article>
+      <article class="problem" id="22_even">
+        <div class="problem-header">
+          <h3>22. 22_even.py</h3>
+          <p>Source file: Problem_Statements/22_even.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+22. Find All Even Numbers in a List
+Problem Statement:
+Write a program to extract all even numbers from a given list.
+Input:
+ A list of integers
+Output:
+ List of even numbers
+Example:
+Input: [1, 2, 3, 4, 5, 6]
+Output: [2, 4, 6]
+&quot;&quot;&quot;
+l1 = [1,2,3,4,5,6]
+even = []
+for i in l1:
+    if(i%2 == 0):
+        even.append(i)
+print(even)</code></pre>
+      </article>
+      <article class="problem" id="23_replace">
+        <div class="problem-header">
+          <h3>23. 23_replace.py</h3>
+          <p>Source file: Problem_Statements/23_replace.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+23. Replace Elements in a List
+Problem Statement:
+Create a program to replace all occurrences of a specific element in a list with another
+element.
+Input:
+ List
+ Element to replace
+ New element
+Output:
+ Updated list
+Example:
+Input: [1, 2, 3, 2], replace 2 with 9
+Output: [1, 9, 3, 9]
+&quot;&quot;&quot;
+l1 = [1,2,3,2]
+r = 2
+k = 9
+for i in range(len(l1)):
+    if(l1[i] == r):
+        l1[i]=k
+print(l1)</code></pre>
+      </article>
+      <article class="problem" id="24_upper_lower">
+        <div class="problem-header">
+          <h3>24. 24_upper_lower.py</h3>
+          <p>Source file: Problem_Statements/24_upper_lower.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+24. Count Uppercase and Lowercase Letters
+Problem Statement:
+Write a program to count the number of uppercase and lowercase letters in a string.
+Input:
+ A string
+Output:
+ Count of uppercase and lowercase letters
+Example:
+Input: &quot;Hello World&quot;
+Output: Uppercase = 2, Lowercase = 8
+&quot;&quot;&quot;
+string = &quot;Hello World&quot;
+upper = 0
+lower = 0
+for i in range(len(string)):
+    if(65 &lt;= ord(string[i]) &lt;= 90):
+        upper += 1
+    elif(97&lt;= ord(string[i])&lt;=122):
+        lower += 1
+print(&quot;uppercae = &quot;,upper,&quot;, &quot;,&quot;lowercase = &quot;,lower)
+</code></pre>
+      </article>
+      <article class="problem" id="25_check">
+        <div class="problem-header">
+          <h3>25. 25_check.py</h3>
+          <p>Source file: Problem_Statements/25_check.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+25. Check if List is Sorted
+Problem Statement:
+Develop a program to check whether a list is sorted in ascending order.
+Input:
+ A list of numbers
+Output:
+ True / False
+Example:
+Input: [1, 2, 3, 4]
+Output: True
+&quot;&quot;&quot;
+n = [1, 2, 3, 4]
+
+for i in range(0,len(n)-1):
+    if(n[i]&lt;n[i+1]):
+        condition = True
+    else:
+        condition = False
+        break
+print(condition)
+
+
+# 2nd method
+n = [1, 2, 3,0]
+
+condition = True
+
+for i in range(len(n) - 1):
+    if n[i] &gt; n[i + 1]:
+        condition = False
+        break
+
+print(condition)</code></pre>
+      </article>
+      <article class="problem" id="26_missing">
+        <div class="problem-header">
+          <h3>26. 26_missing.py</h3>
+          <p>Source file: Problem_Statements/26_missing.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+26. Find Missing Number in a Sequence
+Problem Statement:
+Write a program to find the missing number in a given sequence of consecutive integers.
+Input:
+ List of integers with one missing number
+Output:
+ Missing number
+Example:
+Input: [1, 2, 4, 5]
+Output: 3
+&quot;&quot;&quot;
+
+# n = [1, 2, 4, 5]
+# for i in range(len(n)):
+#     if n[i] == i + 1:
+#         pass
+#     else:
+#         print(i + 1)
+#         break
+n = [4, 1, 2, 5]
+n.sort()
+for i in range(len(n)-1):
+    if n[i+1] - n[i] != 1:
+        print(n[i] + 1)
+        break</code></pre>
+      </article>
+      <article class="problem" id="27_factorial">
+        <div class="problem-header">
+          <h3>27. 27_factorial.py</h3>
+          <p>Source file: Problem_Statements/27_factorial.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+27. Recursive Factorial Program
+Problem Statement:
+Develop a recursive function to calculate the factorial of a number.
+Input:
+ Integer n
+Output:
+ Factorial of n
+Example:
+Input: 5
+Output: 120
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+def factorial(n):
+    if(n&lt;=0):
+        return 1
+    else:
+        return n * factorial(n-1)
+result = factorial(n)
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="28_merge">
+        <div class="problem-header">
+          <h3>28. 28_merge.py</h3>
+          <p>Source file: Problem_Statements/28_merge.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+28. Merge Two Dictionaries
+Problem Statement:
+Write a program to merge two dictionaries into one.
+Input:
+ Two dictionaries
+Output:
+ Combined dictionary
+Example:
+Input: {&#x27;a&#x27;:1}, {&#x27;b&#x27;:2}
+Output: {&#x27;a&#x27;:1, &#x27;b&#x27;:2}
+&quot;&quot;&quot;
+# Input dictionaries
+dict1 = {&#x27;a&#x27;: 1}
+dict2 = {&#x27;b&#x27;: 2}
+
+# Method 1: Using update()
+merged_dict = dict1.copy()   # copy to avoid changing original
+merged_dict.update(dict2)
+
+# Output
+print(merged_dict)</code></pre>
+      </article>
+      <article class="problem" id="29_longest">
+        <div class="problem-header">
+          <h3>29. 29_longest.py</h3>
+          <p>Source file: Problem_Statements/29_longest.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+29. Find Longest Word in a Sentence
+Problem Statement:
+Create a program to find the longest word in a given sentence.
+Input:
+ A string sentence
+Output:
+ Longest word
+Example:
+Input: &quot;Machine learning is powerful&quot;
+Output: &quot;learning&quot;
+&quot;&quot;&quot;
+string = &quot;Machine learning is powerful&quot;
+
+words = string.split()
+
+longest = words[0]
+
+for word in words:
+    if len(word) &gt; len(longest):
+        longest = word
+
+print(longest)</code></pre>
+      </article>
+      <article class="problem" id="30_fibonacci">
+        <div class="problem-header">
+          <h3>30. 30_fibonacci.py</h3>
+          <p>Source file: Problem_Statements/30_fibonacci.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+30. Recursive Fibonacci Series
+Problem Statement:
+Write a recursive program to generate Fibonacci series up to n terms.
+Input:
+ Integer n
+Output:
+ Fibonacci sequence
+Example:
+Input: 5
+Output: 0, 1, 1, 2, 3
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+n = int(input(&quot;Enter number of terms: &quot;))
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+for i in range(n):
+    print(fibonacci(i), end=&quot; &quot;)</code></pre>
+      </article>
+      <article class="problem" id="31_reverse">
+        <div class="problem-header">
+          <h3>31. 31_reverse.py</h3>
+          <p>Source file: Problem_Statements/31_reverse.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+31. Reverse a List Without Using Built-in Functions
+Problem Statement:
+Write a program to reverse a list without using any built-in reverse functions.
+Input:
+ A list of elements
+Output:
+ Reversed list
+Example:
+Input: [1, 2, 3]
+Output: [3, 2, 1]
+&quot;&quot;&quot;
+
+l1 = [1, 2, 3]
+print(l1[::-1])
+
+l1 = [1, 2, 3]
+
+start = 0
+end = len(l1) - 1
+
+while start &lt; end:
+    l1[start], l1[end] = l1[end], l1[start]
+    start += 1
+    end -= 1
+
+print(l1)</code></pre>
+      </article>
+      <article class="problem" id="32_min_max">
+        <div class="problem-header">
+          <h3>32. 32_min_max.py</h3>
+          <p>Source file: Problem_Statements/32_min_max.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+32. Find Minimum and Maximum in a List
+Problem Statement:
+Develop a program to find the minimum and maximum elements in a list.
+Input:
+ A list of numbers
+Output:
+ Minimum and maximum values
+Example:
+Input: [4, 1, 9, 2]
+Output: Min = 1, Max = 9
+&quot;&quot;&quot;
+list1 = [4, 1, 9, 2]
+list1.sort()
+print(&quot;min : &quot;,list1[0],&quot;, max&quot;,list1[len(list1)-1])
+
+n = [4, 1, 9, 2]
+max1 = n[0]
+min1 = n[0]
+for i in range(1,len(n)):
+    if(max1 &lt; n[i]):
+        max1 = n[i]
+    if(min1 &gt; n[i]):
+        min1 = n[i]
+
+print(min1 , max1)</code></pre>
+      </article>
+      <article class="problem" id="33_count">
+        <div class="problem-header">
+          <h3>33. 33_count.py</h3>
+          <p>Source file: Problem_Statements/33_count.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+33. Count Words in a Sentence
+Problem Statement:
+Write a program to count the total number of words in a sentence.
+Input:
+ A string
+Output:
+ Number of words
+Example:
+Input: &quot;Python is easy&quot;
+Output: 3
+&quot;&quot;&quot;
+string = &quot;python is easy&quot;
+split = string.split()
+print(&quot;number of words : &quot;,len(split))</code></pre>
+      </article>
+      <article class="problem" id="34_punctuations">
+        <div class="problem-header">
+          <h3>34. 34_punctuations.py</h3>
+          <p>Source file: Problem_Statements/34_punctuations.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+34. Remove Punctuation from String
+Problem Statement:
+Create a program to remove all punctuation marks from a given string.
+Input:
+ A string
+Output:
+ String without punctuation
+Example:
+Input: &quot;Hello, World!&quot;
+Output: &quot;Hello World&quot;
+&quot;&quot;&quot;
+string = &quot;Hello, World!&quot;
+result = &quot;&quot;
+for i in string:
+    if(i not in &quot;.,?!;&#x27;-_|(){}&quot;):
+        result+=i
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="35_convert">
+        <div class="problem-header">
+          <h3>35. 35_convert.py</h3>
+          <p>Source file: Problem_Statements/35_convert.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+35. Convert List to String
+Problem Statement:
+Write a program to convert a list of characters into a single string.
+Input:
+ List of characters
+Output:
+ Combined string
+Example:
+Input: [&#x27;P&#x27;,&#x27;y&#x27;,&#x27;t&#x27;,&#x27;h&#x27;,&#x27;o&#x27;,&#x27;n&#x27;]
+Output: &quot;Python&quot;
+&quot;&quot;&quot;
+n = [&#x27;P&#x27;,&#x27;y&#x27;,&#x27;t&#x27;,&#x27;h&#x27;,&#x27;o&#x27;,&#x27;n&#x27;]
+str = &quot;&quot;
+for i in n:
+    str += i
+print(str)</code></pre>
+      </article>
+      <article class="problem" id="36_find">
+        <div class="problem-header">
+          <h3>36. 36_find.py</h3>
+          <p>Source file: Problem_Statements/36_find.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+36. Find Index of Element in List
+Problem Statement:
+Develop a program to find the index of a given element in a list.
+Input:
+ List
+ Element to search
+Output:
+ Index of element or &quot;Not Found&quot;
+Example:
+Input: [10, 20, 30], element = 20
+Output: 1
+&quot;&quot;&quot;
+
+n = [10, 20, 30]
+key = 20
+index = 0
+for i in range(len(n)):
+    if n[i] == key:
+        index = i
+if key not in n:
+    print(&quot;key not found !&quot;)
+else:
+    print(index)
+</code></pre>
+      </article>
+      <article class="problem" id="37_sum">
+        <div class="problem-header">
+          <h3>37. 37_sum.py</h3>
+          <p>Source file: Problem_Statements/37_sum.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+37. Sum of Even and Odd Numbers Separately
+Problem Statement:
+Write a program to calculate the sum of even and odd numbers separately.
+Input:
+ List of integers
+Output:
+ Sum of even numbers, sum of odd numbers
+Example:
+Input: [1, 2, 3, 4]
+Output: Even = 6, Odd = 4
+&quot;&quot;&quot;
+n = [1,2,3,4]
+even = []
+odd = []
+for i in n:
+    if(i%2 == 0):
+        even.append(i)
+    else:
+        odd.append(i)
+print(&quot;even : &quot;,sum(even),&quot; , odd : &quot;,sum(odd))</code></pre>
+      </article>
+      <article class="problem" id="38_armstrong">
+        <div class="problem-header">
+          <h3>38. 38_armstrong.py</h3>
+          <p>Source file: Problem_Statements/38_armstrong.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+38. Check Armstrong Number
+Problem Statement:
+Create a program to check whether a number is an Armstrong number.
+Input:
+ Integer
+Output:
+ True / False
+Example:
+Input: 153
+Output: True
+&quot;&quot;&quot;
+n = input(&quot;Enter a number : &quot;)
+power = len(n)
+result = 0
+for i in n:
+    result += int(i)**power
+if(result == int(n)):
+    print(True)
+else:
+    print(False)</code></pre>
+      </article>
+      <article class="problem" id="39_table">
+        <div class="problem-header">
+          <h3>39. 39_table.py</h3>
+          <p>Source file: Problem_Statements/39_table.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+39. Generate Multiplication Table
+Problem Statement:
+Write a program to generate the multiplication table of a given number.
+Input:
+ Integer
+Output:
+ Multiplication table
+Example:
+Input: 2
+Output: 2, 4, 6, 8, 10...
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+for i in range(1,11):
+    print(f&quot;{n} x {i} = {n*i}&quot;)
+</code></pre>
+      </article>
+      <article class="problem" id="40_factor">
+        <div class="problem-header">
+          <h3>40. 40_factor.py</h3>
+          <p>Source file: Problem_Statements/40_factor.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+40. Find All Factors of a Number
+Problem Statement:
+Develop a program to find all factors of a given number.
+Input:
+ Integer
+Output:
+ List of factors
+Example:
+Input: 6
+Output: [1, 2, 3, 6]
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+result = []
+for i in range(1,n+1):
+    if(n%i == 0):
+        result.append(i)
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="41_empty">
+        <div class="problem-header">
+          <h3>41. 41_empty.py</h3>
+          <p>Source file: Problem_Statements/41_empty.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+41. Remove Empty Strings from List
+Problem Statement:
+Write a program to remove all empty strings from a list.
+Input:
+ List containing strings
+Output:
+ Updated list
+Example:
+Input: [&quot;a&quot;, &quot;&quot;, &quot;b&quot;]
+Output: [&quot;a&quot;, &quot;b&quot;]
+&quot;&quot;&quot;
+n = [&quot;a&quot;, &quot;&quot;, &quot;b&quot;]
+a = []
+for i in n:
+    if(i != &quot;&quot;):
+        a.append(i)
+print(a)</code></pre>
+      </article>
+      <article class="problem" id="42_prime">
+        <div class="problem-header">
+          <h3>42. 42_prime.py</h3>
+          <p>Source file: Problem_Statements/42_prime.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+42. Check Prime Number
+Problem Statement:
+Create a program to check whether a number is prime.
+Input:
+ Integer
+Output:
+ True / False
+Example:
+Input: 7
+Output: True
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+for i in range(2,n):
+    if(n%i != 0):
+        prime = True
+    else:
+        prime = False
+        break
+print(prime)</code></pre>
+      </article>
+      <article class="problem" id="43_counting">
+        <div class="problem-header">
+          <h3>43. 43_counting.py</h3>
+          <p>Source file: Problem_Statements/43_counting.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+43. Count Lines, Words, Characters
+Problem Statement:
+Write a program to count lines, words, and characters in a text.
+Input:
+ Multi-line string
+Output:
+ Line count, word count, character count
+Example:
+Input: &quot;Hello\nWorld&quot;
+Output: Lines = 2, Words = 2, Characters = 10
+&quot;&quot;&quot;
+text = &quot;Hello\nWorld&quot;
+
+lines = text.split(&#x27;\n&#x27;)
+words = text.split()
+
+line_count = len(lines)
+word_count = len(words)
+char_count = len(text)
+
+print(&quot;Lines =&quot;, line_count)
+print(&quot;Words =&quot;, word_count)
+print(&quot;Characters =&quot;, char_count)</code></pre>
+      </article>
+      <article class="problem" id="44_swap">
+        <div class="problem-header">
+          <h3>44. 44_swap.py</h3>
+          <p>Source file: Problem_Statements/44_swap.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+44. Swap First and Last Element of List
+Problem Statement:
+Develop a program to swap the first and last elements of a list.
+Input:
+ List
+Output:
+ Updated list
+Example:
+Input: [1, 2, 3]
+Output: [3, 2, 1]
+&quot;&quot;&quot;
+n=[1,2,3]
+n[0],n[len(n)-1]= n[len(n)-1],n[0]
+print(n)</code></pre>
+      </article>
+      <article class="problem" id="45_duplicate">
+        <div class="problem-header">
+          <h3>45. 45_duplicate.py</h3>
+          <p>Source file: Problem_Statements/45_duplicate.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+45. Find Duplicate Elements in List
+Problem Statement:
+Write a program to identify duplicate elements in a list.
+Input:
+ List
+Output:
+ List of duplicate elements
+Example:
+Input: [1, 2, 2, 3]
+Output: [2]
+&quot;&quot;&quot;
+n = [1, 2, 2, 3]
+
+seen = []
+duplicates = []
+
+for i in range(len(n)):
+    if n[i] in seen and n[i] not in duplicates:
+        duplicates.append(n[i])
+    else:
+        seen.append(n[i])
+
+print(duplicates)</code></pre>
+      </article>
+      <article class="problem" id="46_captalize">
+        <div class="problem-header">
+          <h3>46. 46_captalize.py</h3>
+          <p>Source file: Problem_Statements/46_captalize.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+46. Convert String to Title Case
+Problem Statement:
+Create a program to convert a string into title case.
+Input:
+ String
+Output:
+ Title case string
+Example:
+Input: &quot;hello world&quot;
+Output: &quot;Hello World&quot;
+&quot;&quot;&quot;
+string = &quot;hello world&quot;
+str = string.title()
+print(str)</code></pre>
+      </article>
+      <article class="problem" id="47_length">
+        <div class="problem-header">
+          <h3>47. 47_length.py</h3>
+          <p>Source file: Problem_Statements/47_length.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+47. Find Length of String Using Recursion
+Problem Statement:
+Write a recursive function to find the length of a string.
+Input:
+ String
+Output:
+ Length
+Example:
+Input: &quot;abc&quot;
+Output: 3
+&quot;&quot;&quot;
+def string_length(s):
+    # Base case
+    if s == &quot;&quot;:
+        return 0
+    # Recursive case
+    return 1 + string_length(s[1:])
+
+# Input
+text = &quot;abc&quot;
+
+# Output
+print(string_length(text))</code></pre>
+      </article>
+      <article class="problem" id="48_subset">
+        <div class="problem-header">
+          <h3>48. 48_subset.py</h3>
+          <p>Source file: Problem_Statements/48_subset.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+48. Check Subset of List
+Problem Statement:
+Develop a program to check whether one list is a subset of another.
+Input:
+ Two lists
+Output:
+ True / False
+Example:
+Input: [1,2], [1,2,3]
+Output: True
+&quot;&quot;&quot;
+n = [1,2,3]
+a = [1,2]
+for i in a :
+    if(i in n):
+        condition = True
+    else:
+        condition = False
+print(condition)</code></pre>
+      </article>
+      <article class="problem" id="49_unique">
+        <div class="problem-header">
+          <h3>49. 49_unique.py</h3>
+          <p>Source file: Problem_Statements/49_unique.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+49. Count Unique Elements in List
+Problem Statement:
+Write a program to count unique elements in a list.
+Input:
+ List
+Output:
+ Count of unique elements
+Example:
+Input: [1,1,2,3]
+Output: 3
+&quot;&quot;&quot;
+n = [1,1,2,3]
+s = list(set(n))
+print(len(s))</code></pre>
+      </article>
+      <article class="problem" id="50_intersection">
+        <div class="problem-header">
+          <h3>50. 50_intersection.py</h3>
+          <p>Source file: Problem_Statements/50_intersection.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+50. Find Intersection Without Built-in Functions
+Problem Statement:
+Create a program to find intersection of two lists without using built-in functions.
+Input:
+ Two lists
+Output:
+ Intersection list
+Example:
+Input: [1,2,3], [2,3,4]
+Output: [2,3]
+&quot;&quot;&quot;
+n1 = [1,2,3]
+n2 = [2,3,4]
+arr = []
+for i in range(len(n1)):
+    for j in range(len(n1)):
+        if(n1[i] == n2[j]):
+            arr.append(n1[i])
+print(arr)
+
+
+# 2nd method
+n1 = [1,2,3]
+n2 = [2,3,4]
+arr = []
+
+for i in n1:
+    if i in n2:
+        arr.append(i)
+print(arr)
+
+intersect  = [x for x in n1 if x in n2]
+print(intersect)</code></pre>
+      </article>
+      <article class="problem" id="51_space">
+        <div class="problem-header">
+          <h3>51. 51_space.py</h3>
+          <p>Source file: Problem_Statements/51_space.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+51. Replace Spaces with Hyphens
+Problem Statement:
+Write a program to replace spaces in a string with hyphens.
+Input:
+ String
+Output:
+ Modified string
+Example:
+Input: &quot;hello world&quot;
+Output: &quot;hello-world&quot;
+&quot;&quot;&quot;
+string = &quot;hello word&quot;
+for i in string:
+    if (i == &quot; &quot;):
+        print(string.replace(&quot; &quot;,&#x27;-&#x27;))
+</code></pre>
+      </article>
+      <article class="problem" id="52_count">
+        <div class="problem-header">
+          <h3>52. 52_count.py</h3>
+          <p>Source file: Problem_Statements/52_count.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+52. Count Frequency of Elements in List
+Problem Statement:
+Develop a program to count frequency of elements in a list.
+Input:
+ List
+Output:
+ Dictionary of frequencies
+Example:
+Input: [1,1,2]
+Output: {1:2, 2:1}
+&quot;&quot;&quot;
+
+n = [1, 1, 2]
+dict = {}
+for i in n:
+    if i in dict:
+        dict[i] += 1
+    else:
+        dict[i] = 1
+print(dict)
+</code></pre>
+      </article>
+      <article class="problem" id="53_two_list">
+        <div class="problem-header">
+          <h3>53. 53_two_list.py</h3>
+          <p>Source file: Problem_Statements/53_two_list.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+53. Check if Two Lists are Equal
+Problem Statement:
+Write a program to check if two lists are equal.
+Input:
+ Two lists
+Output:
+ True / False
+Example:
+Input: [1,2], [1,2]
+Output: True
+&quot;&quot;&quot;
+n1 = [1,2]
+n2 = [1,2]
+for i in range(len(n1)):
+    if(n1[i] == n2[i]):
+        result = True
+    else :
+        result = False
+        break
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="54_decimal_binary">
+        <div class="problem-header">
+          <h3>54. 54_decimal_binary.py</h3>
+          <p>Source file: Problem_Statements/54_decimal_binary.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+54. Convert Decimal to Binary
+Problem Statement:
+Create a program to convert a decimal number to binary.
+Input:
+ Integer
+Output:
+ Binary representation
+Example:
+Input: 5
+Output: 101
+&quot;&quot;&quot;
+n = 25
+print(bin(n)[2:])
+binary = &quot;&quot;
+while(n&gt;0):
+    rem = n%2
+    binary = str(rem) + binary
+    n = n//2
+print(binary)</code></pre>
+      </article>
+      <article class="problem" id="55_gcd">
+        <div class="problem-header">
+          <h3>55. 55_gcd.py</h3>
+          <p>Source file: Problem_Statements/55_gcd.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+55. Find GCD of Two Numbers
+Problem Statement:
+Write a program to find GCD of two numbers.
+Input:
+ Two integers
+Output:
+ GCD
+Example:
+Input: 8, 12
+Output: 4
+&quot;&quot;&quot;
+a = 8
+b = 12
+
+while b != 0:
+    a, b = b, a % b
+print(a)</code></pre>
+      </article>
+      <article class="problem" id="56_lcm">
+        <div class="problem-header">
+          <h3>56. 56_lcm.py</h3>
+          <p>Source file: Problem_Statements/56_lcm.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+56. Find LCM of Two Numbers
+Problem Statement:
+Develop a program to find LCM of two numbers.
+Input:
+ Two integers
+Output:
+ LCM
+Example:
+Input: 4, 6
+Output: 12
+&quot;&quot;&quot;
+n1 = 4
+n2 = 6
+def lcm(n1,n2):
+    if(n1 &gt; n2):
+        highest = n1
+    else :
+        highest = n2
+    while(True):
+        if(highest%n1 == 0 and highest%n2 == 0):
+            lcm = highest
+            break
+        highest += 1
+    return lcm
+print(lcm(n1,n2))
+</code></pre>
+      </article>
+      <article class="problem" id="57_remove">
+        <div class="problem-header">
+          <h3>57. 57_remove.py</h3>
+          <p>Source file: Problem_Statements/57_remove.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+57. Remove nth Element from List
+Problem Statement:
+Write a program to remove the nth element from a list.
+Input:
+ List
+ Position n
+Output:
+ Updated list
+Example:
+Input: [1,2,3], n = 1
+Output: [1,3]
+&quot;&quot;&quot;
+n = [1,2,3]
+index = 1
+n.pop(index)
+print(n)</code></pre>
+      </article>
+      <article class="problem" id="58_stack">
+        <div class="problem-header">
+          <h3>58. 58_stack.py</h3>
+          <p>Source file: Problem_Statements/58_stack.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+58. Check Balanced Parentheses
+Problem Statement:
+Create a program to check if parentheses are balanced.
+Input:
+ String
+Output:
+ True / False
+Example:
+Input: &quot;(())&quot;
+Output: True
+&quot;&quot;&quot;
+s = &quot;(())&quot;
+
+stack = []
+balanced = True
+
+for ch in s:
+    if ch == &#x27;(&#x27;:
+        stack.append(ch)
+    elif ch == &#x27;)&#x27;:
+        if len(stack) == 0:
+            balanced = False
+            break
+        stack.pop()
+
+if len(stack) != 0:
+    balanced = False
+
+print(balanced)</code></pre>
+      </article>
+      <article class="problem" id="59_sum">
+        <div class="problem-header">
+          <h3>59. 59_sum.py</h3>
+          <p>Source file: Problem_Statements/59_sum.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+59. Find Sum of Digits
+Problem Statement:
+Write a program to calculate sum of digits.
+Input:
+ Integer
+Output:
+ Sum
+Example:
+Input: 123
+Output: 6
+&quot;&quot;&quot;
+n =(input(&quot;Enter a number : &quot;))
+sum = 0
+for i in n:
+    sum += int(i)
+print(sum)</code></pre>
+      </article>
+      <article class="problem" id="60_power">
+        <div class="problem-header">
+          <h3>60. 60_power.py</h3>
+          <p>Source file: Problem_Statements/60_power.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+60. Recursive Power Function
+Problem Statement:
+Develop a recursive function to compute power (xⁿ).
+Input:
+ Base x, exponent n
+Output:
+ Result
+Example:
+Input: x = 2, n = 3
+Output: 8
+&quot;&quot;&quot;
+def power(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x * power(x, n - 1)
+
+print(power(2, 3))</code></pre>
+      </article>
+      <article class="problem" id="61_average">
+        <div class="problem-header">
+          <h3>61. 61_average.py</h3>
+          <p>Source file: Problem_Statements/61_average.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+61. Find Average of Elements in a List
+Problem Statement:
+Write a program to calculate the average of all elements in a list.
+Input:
+ A list of numbers
+Output:
+ Average value
+Example:
+Input: [2, 4, 6, 8]
+Output: 5.0
+&quot;&quot;&quot;
+n = [2,4,6,8]
+sum = 0
+for i in n:
+    sum += i
+print(sum/(len(n)))</code></pre>
+      </article>
+      <article class="problem" id="62_concatenate">
+        <div class="problem-header">
+          <h3>62. 62_concatenate.py</h3>
+          <p>Source file: Problem_Statements/62_concatenate.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+62. Concatenate Two Strings Without Using ‘+’ Operator
+Problem Statement:
+Develop a program to concatenate two strings without using the ‘+’ operator.
+Input:
+ Two strings
+Output:
+ Concatenated string
+Example:
+Input: &quot;Hello&quot;, &quot;World&quot;
+Output: &quot;HelloWorld&quot;
+&quot;&quot;&quot;
+s1 = &quot;Hello&quot;
+s2 = &quot;World&quot;
+
+result = &quot;&quot;
+
+for ch in s1:
+    result += ch
+
+for ch in s2:
+    result += ch
+
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="63_smallest">
+        <div class="problem-header">
+          <h3>63. 63_smallest.py</h3>
+          <p>Source file: Problem_Statements/63_smallest.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+63. Find Smallest Element in a List Using Recursion
+Problem Statement:
+Write a recursive function to find the smallest element in a list.
+Input:
+ A list of numbers
+Output:
+ Smallest element
+Example:
+Input: [5, 2, 9, 1]
+Output: 1
+&quot;&quot;&quot;
+def find_min(lst):
+    # Base case
+    if len(lst) == 1:
+        return lst[0]
+    
+    # Recursive call
+    smallest = find_min(lst[1:])
+    
+    # Compare
+    if lst[0] &lt; smallest:
+        return lst[0]
+    else:
+        return smallest
+
+
+# Example
+print(find_min([5, 2, 9, 1]))</code></pre>
+      </article>
+      <article class="problem" id="64_occurence">
+        <div class="problem-header">
+          <h3>64. 64_occurence.py</h3>
+          <p>Source file: Problem_Statements/64_occurence.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+64. Count Occurrence of a Character in String
+Problem Statement:
+Create a program to count how many times a specific character appears in a string.
+Input:
+ A string
+ A character
+Output:
+ Count of occurrences
+Example:
+Input: &quot;banana&quot;, character = &#x27;a&#x27;
+Output: 3
+&quot;&quot;&quot;
+string = &quot;banana&quot;
+ch = &#x27;a&#x27;
+
+count = string.count(ch)
+
+print(count)</code></pre>
+      </article>
+      <article class="problem" id="65_lead_tail">
+        <div class="problem-header">
+          <h3>65. 65_lead_tail.py</h3>
+          <p>Source file: Problem_Statements/65_lead_tail.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+65. Remove Leading and Trailing Spaces
+Problem Statement:
+Write a program to remove leading and trailing spaces from a string without using built-in
+strip().
+Input:
+ A string
+Output:
+ Trimmed string
+Example:
+Input: &quot; hello &quot;
+Output: &quot;hello&quot;
+&quot;&quot;&quot;
+s = &quot; hello &quot;
+
+start = 0
+end = len(s) - 1
+
+# Remove leading spaces
+while start &lt;= end and s[start] == &#x27; &#x27;:
+    start += 1
+
+# Remove trailing spaces
+while end &gt;= start and s[end] == &#x27; &#x27;:
+    end -= 1
+
+result = &quot;&quot;
+
+for i in range(start, end + 1):
+    result += s[i]
+
+print(result)</code></pre>
+      </article>
+      <article class="problem" id="66_common">
+        <div class="problem-header">
+          <h3>66. 66_common.py</h3>
+          <p>Source file: Problem_Statements/66_common.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+66. Find Common Keys in Two Dictionaries
+Problem Statement:
+Develop a program to find common keys present in two dictionaries.
+Input:
+ Two dictionaries
+Output:
+ List of common keys
+Example:
+Input: {&#x27;a&#x27;:1, &#x27;b&#x27;:2}, {&#x27;b&#x27;:3, &#x27;c&#x27;:4}
+Output: [&#x27;b&#x27;]
+&quot;&quot;&quot;
+d1 = {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2}
+d2 = {&#x27;b&#x27;: 3, &#x27;c&#x27;: 4}
+
+common = []
+
+for key in d1:
+    if key in d2:
+        common.append(key)
+
+print(common)</code></pre>
+      </article>
+      <article class="problem" id="67_square">
+        <div class="problem-header">
+          <h3>67. 67_square.py</h3>
+          <p>Source file: Problem_Statements/67_square.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+67. Create List of Squares
+Problem Statement:
+Write a program to create a list containing squares of numbers from 1 to n.
+Input:
+ Integer n
+Output:
+ List of squares
+Example:
+Input: n = 4
+Output: [1, 4, 9, 16]
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+arr = []
+for i in range(1,n+1):
+    arr.append(i**2)
+print(arr)</code></pre>
+      </article>
+      <article class="problem" id="68_digits">
+        <div class="problem-header">
+          <h3>68. 68_digits.py</h3>
+          <p>Source file: Problem_Statements/68_digits.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+68. Check if String Contains Only Digits
+Problem Statement:
+Create a program to check whether a string contains only numeric digits.
+Input:
+ A string
+Output:
+ True / False
+Example:
+Input: &quot;12345&quot;
+Output: True
+&quot;&quot;&quot;
+s = &quot;12345&quot;
+
+print(s.isdigit())</code></pre>
+      </article>
+      <article class="problem" id="69_recursive">
+        <div class="problem-header">
+          <h3>69. 69_recursive.py</h3>
+          <p>Source file: Problem_Statements/69_recursive.py</p>
+        </div>
+        <pre><code>&quot;&quot;&quot;
+69. Recursive Sum of Natural Numbers
+Problem Statement:
+Write a recursive function to calculate the sum of first n natural numbers.
+Input:
+ Integer n
+Output:
+ Sum
+Example:
+Input: n = 5
+Output: 15
+&quot;&quot;&quot;
+n = int(input(&quot;Enter a number : &quot;))
+def natural(n):
+    if(n&lt;=0):
+        return 0
+    else:
+        return n + natural(n-1)
+result = natural(n)
+print(result)</code></pre>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
