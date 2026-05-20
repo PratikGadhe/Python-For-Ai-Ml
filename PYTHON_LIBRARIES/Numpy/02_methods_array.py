@@ -49,3 +49,30 @@ original = np.array([[1,2],[3,4]])
 new_column = np.array([[7],[8]])
 with_column = np.hstack((original,new_column))
 print(with_column)
+
+#11. removing elements using np.delete(<arr>,<slicing/indexing>)
+arr = np.array([1,2,3,4,5,6])
+delete = np.delete(arr,2)
+print(delete)
+
+# 12. adding columns / rows using np.sum(<arr> , axis)
+sales_data = np.array([
+    [1, 150000, 180000, 220000, 250000],
+    [2, 120000, 140000, 160000, 190000]
+])
+sum_column = np.sum(sales_data[:,1:],axis = 0)
+print(sum_column)
+sum_row = np.sum(sales_data[:,1:],axis = 1)
+print(sum_row)
+
+#13. minimum by column and row 
+print("column : ",np.min(sales_data[:,1:],axis = 0))
+print("row : ",np.min(sales_data[:,1:],axis = 1))
+
+#14. maximum by column and row 
+print("column : ",np.max(sales_data[:,1:],axis = 0))
+print("row : ",np.max(sales_data[:,1:],axis = 1))
+
+#15. average by column and row 
+print("column : ",np.mean(sales_data[:,1:],axis = 0))
+print("row : ",np.mean(sales_data[:,1:],axis = 1))
