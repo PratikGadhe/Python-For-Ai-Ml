@@ -43,3 +43,23 @@ plt.xlabel("years")
 plt.ylabel("Sales")
 plt.grid(True)
 plt.show()
+
+# OPERATIONS ON VECTOR
+vector1 =np.array([1,2,3,4,5])
+vector2 =np.array([9,7,8,9,10])
+# 1.addition
+print(vector1+vector2)
+# 2.multiplication 
+print(vector1 * vector2)
+# 3. dot product 
+print(np.dot(vector1 , vector2))
+
+# to find the angle between two vectors 
+"""
+angle = v1.v2/(|v1|*|v2|)
+"""
+dot_product = np.dot(vector1,vector2)
+normallize_v1 = np.linalg.norm(vector1)
+normallize_v2 = np.linalg.norm(vector2)
+angle = dot_product / ((normallize_v1)*(normallize_v2))
+print("angle : ",angle)
