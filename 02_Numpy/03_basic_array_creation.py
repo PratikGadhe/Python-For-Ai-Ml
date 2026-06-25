@@ -23,3 +23,12 @@ print(arr4)
 # 6. specific datatype
 arr5 = np.zeros((2,3),dtype = int)
 print(arr5)
+
+# 7. constant array using full()
+constant_value = np.full((3,3),63)
+print(constant_value)
+
+# 8. array with random value using random class
+random = np.random.random((3,3))
+print(random)
+# remember .random is class having lots of methods in it
