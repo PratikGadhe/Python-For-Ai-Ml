@@ -34,5 +34,8 @@ print(list5)
 
 #6. list.pop(idx) : this will remove the value from the given index
 list6=[1,3,5,7,9,0]
-list6.pop(5)
-# print(list6)
+list6.pop()
+print(list6)
+
+del list6[0:3]
+print(list6)

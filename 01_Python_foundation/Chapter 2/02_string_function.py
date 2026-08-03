@@ -7,7 +7,8 @@ print(name.endswith("dhe"))
 
 str="i am learning python from apna college"
 str1=str.capitalize()
-# print(str1)
+print(str1)
+print(str)
 
 #3. str.replace( old, new ) #replaces all occurrences of old
 
