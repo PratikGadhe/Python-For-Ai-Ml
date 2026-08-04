@@ -57,3 +57,23 @@ for i in range(2,10):
     print(fib)
     fib0,fib1 = fib1,fib
 
+# Write a Python Program to Check Armstrong Number?
+n = int(input("Enter a number : "))
+power = len(str(n))
+result = 0
+for i in str(n):
+    result += (int(i)**power)
+if (result == n):
+    print(f"{n} is an armstrong number")
+else: 
+    print(f"{n} is not an armstrong number")
+
+# Write a Python Program to Find Armstrong Number in an Interval.
+n = int(input("Enter a range : "))
+for i in range(1,n+1):
+    power = len(str(i))
+    result = 0
+    for j in str(i):
+        result += int(j)**power
+    if(result == i):
+        print(result)
