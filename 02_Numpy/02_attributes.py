@@ -14,14 +14,15 @@ print("dimension : ",array.ndim)
 print("transpose : ",array.T)
 # 6. reshaping the array 
 arr = np.arange(12)
-print("original array : ",arr)
 # converting 1d array into 2d using .reshape() method
 reshaped = arr.reshape((3,4))
 print("Reshaped array : \n",reshaped)
-# important methods 
-# 2. resizing the array using .flatten() : converting nested array into 
+print("original array : ",arr)
+print(reshaped.ndim)
+
+# 7. arr.flatten((row,columns))
+# converting nested array into 1 dimension
 arr = np.array([[1,2,3],[4,5,6]])
 print("original array : \n",arr)
-# converting nested array into 1 dimension
 flatten = arr.flatten()
 print("flatten array : ",flatten)

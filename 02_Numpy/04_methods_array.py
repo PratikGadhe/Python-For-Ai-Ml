@@ -4,11 +4,12 @@ import numpy as np
 # 1. sorting an array using np.sort(arr)
 arr = np.array([3,7,2,1,4,9,6,1,0])
 print("sorted array : ",np.sort(arr))
+print("original array : \n",arr)
 
 # sorting 2d array : 1. by column 2. by row
-arr_2d = np.array([[3,1],
-                   [4,2],
-                   [5,9]])
+arr_2d = np.array([[6,3],
+                   [4,7],
+                   [5,5]])
 # a.Sorting By column (axis = 0) (top to bottom scanning)
 print("Sorting by column (top to bottom) : ",np.sort(arr_2d,axis = 0))
 
@@ -16,10 +17,11 @@ print("Sorting by column (top to bottom) : ",np.sort(arr_2d,axis = 0))
 print("Sorting by row (left to right) : ",np.sort(arr_2d,axis = 1))
 
 # 2. Concetenate two array using np.concatenate((arr1,arr2))
-arr1 = np.array([1,2,3])
-arr2 = np.array([4,5,6])
+arr1 = np.array([[1,2,3],[9,9,9]])
+arr2 = np.array([[4,5,6],[1,4,7]])
 merge = np.concatenate((arr1,arr2))
 print("Merging arrays : ",merge)
+print("additon of two array : ",arr1+arr2)
 
 # 3. merging two different dimensions array vertically
 arr1 = np.array([1,2,3])
@@ -28,14 +30,14 @@ arr2 = np.array([[4,5,6]
 merge = np.vstack((arr1,arr2))
 print(merge)
 
-# 3. merging two different dimensions array vertically
-arr1 = np.array([1,2,3],[7,7,7])
+# 4. merging two different dimensions array horizontally
+arr1 = np.array([[1,2,3],[7,7,7]])
 arr2 = np.array([[4,5,6]
                  ,[7,8,9]])
 merge = np.hstack((arr1,arr2))
 print(merge)
 
-# 7. finding index of array using np.where(<condition>)
+# 5. finding index of array using np.where(<condition>)
 where = np.where(arr > 3)
 print("index : ",where)
 print("values greater than 3 : ",arr[where])
