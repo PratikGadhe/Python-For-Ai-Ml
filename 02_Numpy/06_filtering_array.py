@@ -1,8 +1,6 @@
 import numpy as np
 # FILTERING THE ARRAY
 number = np.array([1,2,3,4,5,6,7,8,9,10])
-even = number[1::2] #slicing method
-print("By Slicing : ",even)
 # numpy allows the expression to be written in []
 even_f = number[number%2 == 0]
 print("By Filtering : ",even_f)
@@ -15,7 +13,8 @@ print("filtering by mask : ",e1)
 index = [2,4,6]
 print("index : ",number[index]) 
 
-where_clause = np.where(number>3)
+where_clause = np.where(number%2 == 0)
+print(where_clause) #indexes for even number
 print("values greater than 3: ",number[where_clause])
 
 

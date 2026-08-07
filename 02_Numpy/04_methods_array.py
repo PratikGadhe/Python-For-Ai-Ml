@@ -44,24 +44,30 @@ print("values greater than 3 : ",arr[where])
 print("values greater than 3 (sort): ",np.sort(arr[where]))
 
 
-# 9. adding row in 2d array
+# 6. adding row in 2d array
 original = np.array([[1,2],[3,4]])
 new_row = np.array([5,6])
 with_row = np.vstack((original,new_row))
 print(with_row)
 
-# 10. adding new column in 2d array
+# 7. adding new column in 2d array
 original = np.array([[1,2],[3,4]])
 new_column = np.array([[7],[8]])
 with_column = np.hstack((original,new_column))
 print(with_column)
 
-#11. removing elements using np.delete(<arr>,<slicing/indexing>)
+#8. removing elements using np.delete(<arr>,<slicing/indexing>)
 arr = np.array([1,2,3,4,5,6])
-delete = np.delete(arr,2)
+delete = np.delete(arr,4)
 print(delete)
+    #for 2d array 
+arr1 = np.array([[1,2]
+                 ,[3,4]
+                 ,[6,7]])
+delt = np.delete(arr1,(4))
+print(delt)
 
-# 12. adding columns / rows using np.sum(<arr> , axis)
+# 9. adding columns / rows using np.sum(<arr> , axis)
 sales_data = np.array([
     [1, 150000, 180000, 220000, 250000],
     [2, 120000, 140000, 160000, 190000]
@@ -71,14 +77,14 @@ print(sum_column)
 sum_row = np.sum(sales_data[:,1:],axis = 1)
 print(sum_row)
 
-#13. minimum by column and row 
+#10. minimum by column and row 
 print("column : ",np.min(sales_data[:,1:],axis = 0))
 print("row : ",np.min(sales_data[:,1:],axis = 1))
 
-#14. maximum by column and row 
+#11. maximum by column and row 
 print("column : ",np.max(sales_data[:,1:],axis = 0))
 print("row : ",np.max(sales_data[:,1:],axis = 1))
 
-#15. average by column and row 
+#12. average by column and row 
 print("column : ",np.mean(sales_data[:,1:],axis = 0))
 print("row : ",np.mean(sales_data[:,1:],axis = 1))
