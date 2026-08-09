@@ -56,3 +56,9 @@ print(s1)
 dict = {'a':1,'b':2,'c':3,'d':4}
 s1 = pd.Series(dict)
 print(s1)
+
+# Naming a Series
+s1 = pd.Series([1,2,3,4])
+s1.name = "Data"
+s1.index.name = "index"
+print(s1)
