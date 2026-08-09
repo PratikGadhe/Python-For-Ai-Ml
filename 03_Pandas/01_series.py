@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 # creating an empty series
-# s1 = pd.Series()
-# print(s1)
+s1 = pd.Series()
+print(s1)
 
 #creating series using list 
 # s1 = pd.Series([1,2,3,4,5],['a','b','c','d','e'])
