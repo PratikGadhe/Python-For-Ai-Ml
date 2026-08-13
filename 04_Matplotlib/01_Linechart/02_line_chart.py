@@ -12,6 +12,7 @@ Markers Availabe:
 """
 section = ['A','B','C','D']
 students = [10,20,15,30]
+plt.figure(figsize = (10,5))
 plt.grid(True)
 plt.xlabel("Sections")
 plt.ylabel("Students")
