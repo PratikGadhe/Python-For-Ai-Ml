@@ -4,3 +4,5 @@
 **/.venv/
 
 **/.venv*/
+
+/practical/ratings.csv
